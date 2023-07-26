@@ -1,21 +1,23 @@
-import {CleanWebpackPlugin} from "clean-webpack-plugin"
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin"
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import path from "path";
-import TerserPlugin from "terser-webpack-plugin";
-import merge from "webpack-merge";
+/* eslint-disable import/no-default-export */
 
-import commonConfig from "./webpack.common"
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
+import TerserPlugin from 'terser-webpack-plugin';
+import merge from 'webpack-merge';
 
-const config = merge(commonConfig, {
+import { common } from './webpack.common';
+
+const config = merge(common, {
   mode: 'production',
   optimization: {
     minimizer: [
       new CleanWebpackPlugin({
         cleanOnceBeforeBuildPatterns: [
           '**/*',
-          path.join(process.cwd(), 'dist/**/*')
-        ]
+          path.join(process.cwd(), 'dist/**/*'),
+        ],
       }),
       new TerserPlugin(), // Compress JS files
       new CssMinimizerPlugin(), // Compress CSS files
@@ -35,4 +37,4 @@ const config = merge(commonConfig, {
     }),
   ],
 });
-export default config
+export default config;
