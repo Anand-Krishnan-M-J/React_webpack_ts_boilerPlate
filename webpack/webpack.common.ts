@@ -1,8 +1,8 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
-import { Configuration as WebpackConfiguration } from "webpack"; // Import the WebpackConfiguration type
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import { Configuration as WebpackConfiguration } from 'webpack'; // Import the WebpackConfiguration type
 
-const common: WebpackConfiguration = {
+export const common: WebpackConfiguration = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -37,5 +37,3 @@ const common: WebpackConfiguration = {
     }),
   ],
 };
-
-export default common;
