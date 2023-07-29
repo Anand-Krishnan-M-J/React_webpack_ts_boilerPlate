@@ -4,6 +4,6 @@ import { App } from './App';
 
 test('renders the example component', () => {
   render(<App />);
-  const element = screen.getByText('BoilerPlate');
+  const element = screen.getByText('Home');
   expect(element).toBeInTheDocument();
 });

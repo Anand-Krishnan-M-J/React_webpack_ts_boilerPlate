@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
+import Dotenv from 'dotenv-webpack';
 import { Configuration as WebpackConfiguration } from 'webpack'; // Import the WebpackConfiguration type
 
 export const common: WebpackConfiguration = {
@@ -35,5 +36,6 @@ export const common: WebpackConfiguration = {
       //   baseUrl: '',
       // },
     }),
+    new Dotenv(),
   ],
 };

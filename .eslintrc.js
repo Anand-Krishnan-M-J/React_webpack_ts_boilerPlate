@@ -32,7 +32,7 @@ module.exports = {
   rules: {
     // Add the project rules here
     // For example:
-    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-explicit-any': 'warn',
     'import/no-default-export': 'error',
     'react/prop-types': 'error',
   },

@@ -1,10 +1,15 @@
-import type React from 'react';
-import styles from './styles.module.scss';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './routes';
+import { store } from './store/store';
 
-export const App: React.FC = () => {
-  return (
-    <>
-      <div className={styles.boilerPlate}>BoilerPlate</div>
-    </>
-  );
-};
+export const App: React.FC = () => (
+  <>
+    <BrowserRouter>
+      <Provider store={store}>
+        <AppRoutes />
+      </Provider>
+    </BrowserRouter>
+  </>
+);
